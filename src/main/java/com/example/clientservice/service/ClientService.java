@@ -19,12 +19,14 @@ public class ClientService
 {
     private final ClientRepository clientRepository;
     private final SalesforceApiConnect salesforceApiConnect;
+    private final RestTemplate restTemplate;
 
     @Autowired
-    public ClientService(ClientRepository clientRepository, SalesforceApiConnect salesforceApiConnect)
+    public ClientService(ClientRepository clientRepository, SalesforceApiConnect salesforceApiConnect, RestTemplate restTemplate)
     {
         this.clientRepository = clientRepository;
         this.salesforceApiConnect = salesforceApiConnect;
+        this.restTemplate = restTemplate;
     }
 
     public void addClient(ClientRequest clientRequest)
@@ -47,8 +49,6 @@ public class ClientService
 
     public List<Client> getClientBeneficiaires(String clientDonneurCin)
     {
-        RestTemplate restTemplate = new RestTemplate();
-
         List<Transfere> listTransfers = Arrays.asList(restTemplate.getForEntity("http://transfere-service/api/transfere/Alltransferes/" + clientDonneurCin, Transfere[].class).getBody());
 
         List<Client> listClientBeneficiaires = new ArrayList<>();
