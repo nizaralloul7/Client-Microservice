@@ -37,6 +37,7 @@ public class ClientController
     }
 
     @PostMapping
+    @CrossOrigin(origins = "http://localhost:4200")
     public void addClient(@RequestBody ClientRequest clientRequest)
     {
         clientService.addClient(clientRequest);
@@ -55,6 +56,7 @@ public class ClientController
     }
 
     @DeleteMapping("/delete/{cin}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public void deleteClientByCin(@PathVariable String cin)
     {
         clientService.deleteClient(cin);

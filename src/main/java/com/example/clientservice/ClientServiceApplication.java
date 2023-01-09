@@ -28,7 +28,7 @@ public class ClientServiceApplication {
 		return new RestTemplate();
 	}
 
-	@Bean
+	/*@Bean
 	public CorsFilter corsFilter()
 	{
 		//transfere push
@@ -45,4 +45,6 @@ public class ClientServiceApplication {
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
+	 */
+
 }
