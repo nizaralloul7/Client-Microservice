@@ -23,7 +23,7 @@ public class ClientController
         this.clientService = clientService;
     }
 
-    @GetMapping("/{clientCin}")
+    @GetMapping("/get-client-cin/{clientCin}")
     public Client getClientByCin(@PathVariable String cin)
     {
         return clientRepository.findClientByCin(cin);
