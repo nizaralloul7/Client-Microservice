@@ -24,9 +24,9 @@ public class ClientController
     }
 
     @GetMapping("/get-client-cin/{clientCin}")
-    public Client getClientByCin(@PathVariable String cin)
+    public Client getClientByCin(@PathVariable String clientCin)
     {
-        return clientRepository.findClientByCin(cin);
+        return clientRepository.findClientByCin(clientCin);
     }
 
     @GetMapping("/allClients")
