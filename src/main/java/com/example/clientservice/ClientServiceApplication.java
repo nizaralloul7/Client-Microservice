@@ -27,7 +27,7 @@ public class ClientServiceApplication {
 	{
 		return new RestTemplate();
 	}
-/*
+
 	@Bean
 	public CorsFilter corsFilter()
 	{
@@ -45,5 +45,4 @@ public class ClientServiceApplication {
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
- */
 }

@@ -37,7 +37,6 @@ public class ClientController
     }
 
     @PostMapping
-    @CrossOrigin(origins = "*")
     public void addClient(@RequestBody ClientRequest clientRequest)
     {
         clientService.addClient(clientRequest);
