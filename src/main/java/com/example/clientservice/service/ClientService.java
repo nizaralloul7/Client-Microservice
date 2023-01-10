@@ -43,7 +43,7 @@ public class ClientService
 
         clientRepository.save(client);
 
-        //Update salesforce
+        //Update salesforce org
         AuthenticationResponse authenticationResponse =  salesforceApiConnect.login();
         salesforceApiConnect.addClient(authenticationResponse.getAccess_token(), authenticationResponse.getInstance_url(), client);
     }
