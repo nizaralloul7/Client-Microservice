@@ -5,6 +5,8 @@ import com.example.clientservice.model.Client;
 import com.example.clientservice.repository.ClientRepository;
 import com.example.clientservice.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +20,14 @@ public class ClientController
     private final ClientRepository clientRepository;
     private final ClientService clientService;
 
+
+    @RequestMapping(method = RequestMethod.OPTIONS)
+    public ResponseEntity handle() {
+        return ResponseEntity
+                .ok()
+                .allow(HttpMethod.GET, HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE)
+                .build();
+    }
     @Autowired
     public ClientController(ClientRepository clientRepository, ClientService clientService)
     {
