@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/client")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ClientController
 {
     private final ClientRepository clientRepository;
@@ -42,10 +41,8 @@ public class ClientController
     }
 
     @PostMapping
-    public void addClient(@RequestBody ClientRequest clientRequest, HttpServletResponse response)
+    public void addClient(@RequestBody ClientRequest clientRequest)
     {
-        System.out.println("asdffsadf");
-        response.setHeader("Access-Control-Allow-Origin", "*");
         clientService.addClient(clientRequest);
     }
 
@@ -62,7 +59,6 @@ public class ClientController
     }
 
     @DeleteMapping("/delete/{cin}")
-    @CrossOrigin(origins = "http://localhost:4200")
     public void deleteClientByCin(@PathVariable String cin)
     {
         clientService.deleteClient(cin);

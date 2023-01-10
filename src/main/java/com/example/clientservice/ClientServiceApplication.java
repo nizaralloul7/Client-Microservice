@@ -28,10 +28,9 @@ public class ClientServiceApplication {
 		return new RestTemplate();
 	}
 
-	/*@Bean
-	public CorsFilter corsFilter()
-	{
-		//transfere push
+	@Bean
+	public CorsFilter corsFilter() {
+
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
 		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
@@ -45,6 +44,5 @@ public class ClientServiceApplication {
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
-	 */
 
 }
