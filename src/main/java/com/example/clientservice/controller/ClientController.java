@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/client")
-@CrossOrigin(methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ClientController
 {
     private final ClientRepository clientRepository;
@@ -26,7 +26,7 @@ public class ClientController
         this.clientRepository = clientRepository;
         this.clientService = clientService;
     }
-    
+
 
 
     @GetMapping("/get-client-cin/{clientCin}")
