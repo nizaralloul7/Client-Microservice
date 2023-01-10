@@ -45,7 +45,10 @@ public class ClientService
 
         //Update salesforce org
         AuthenticationResponse authenticationResponse =  salesforceApiConnect.login();
-        salesforceApiConnect.addClient(authenticationResponse.getAccess_token(), authenticationResponse.getInstance_url(), client);
+
+        if(!clientRequest.getOrigine().equalsIgnoreCase("org"))
+            salesforceApiConnect.addClient(authenticationResponse.getAccess_token(), authenticationResponse.getInstance_url(), client);
+
     }
 
     public List<Client> getClientBeneficiaires(String clientDonneurCin)
