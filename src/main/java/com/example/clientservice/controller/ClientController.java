@@ -7,6 +7,7 @@ import com.example.clientservice.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -36,8 +37,9 @@ public class ClientController
     }
 
     @PostMapping
-    public void addClient(@RequestBody ClientRequest clientRequest)
+    public void addClient(@RequestBody ClientRequest clientRequest, HttpServletResponse response)
     {
+        response.setHeader("Access-Control-Allow-Origin", "*");
         clientService.addClient(clientRequest);
     }
 
