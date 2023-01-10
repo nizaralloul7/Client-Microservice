@@ -39,8 +39,6 @@ public class ClientController
     @PostMapping
     public void addClient(@RequestBody ClientRequest clientRequest, HttpServletResponse response)
     {
-        System.out.println("asdfa");
-        response.setHeader("Access-Control-Allow-Origin", "*");
         clientService.addClient(clientRequest);
     }
 
