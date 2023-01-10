@@ -17,4 +17,5 @@ public class ClientRequest
     private Date dateNaissance;
     private String phoneNumber;
     private String email;
+    private String salesforceId;
 }

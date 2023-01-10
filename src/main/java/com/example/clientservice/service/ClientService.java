@@ -38,6 +38,7 @@ public class ClientService
                 .phoneNumber(clientRequest.getPhoneNumber())
                 .nom(clientRequest.getNom())
                 .prenom(clientRequest.getPrenom())
+                .salesforceId(clientRequest.getSalesforceId())
                 .build();
 
         clientRepository.save(client);

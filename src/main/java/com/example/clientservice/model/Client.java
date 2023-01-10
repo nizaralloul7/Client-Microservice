@@ -33,4 +33,5 @@ public class Client
     @JsonProperty("phone")
     private String phoneNumber;
     private String email;
+    private String salesforceId;
 }
