@@ -28,7 +28,7 @@ public class Client
     private String nom;
     private String prenom;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    @JsonProperty("birthDate")
+    @JsonProperty("birthDate") @JsonIgnore
     private Date dateNaissance;
     @JsonProperty("phone")
     private String phoneNumber;
