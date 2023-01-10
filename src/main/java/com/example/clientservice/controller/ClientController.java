@@ -27,14 +27,6 @@ public class ClientController
         this.clientService = clientService;
     }
     
-    @CrossOrigin
-    @RequestMapping(method = RequestMethod.OPTIONS)
-    public ResponseEntity handle() {
-        return ResponseEntity
-                .ok()
-                .allow(HttpMethod.GET, HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE)
-                .build();
-    }
 
 
     @GetMapping("/get-client-cin/{clientCin}")
