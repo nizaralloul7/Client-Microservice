@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/client")
-@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS })
+@CrossOrigin(methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class ClientController
 {
     private final ClientRepository clientRepository;
@@ -26,6 +26,16 @@ public class ClientController
         this.clientRepository = clientRepository;
         this.clientService = clientService;
     }
+    
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.OPTIONS)
+    public ResponseEntity handle() {
+        return ResponseEntity
+                .ok()
+                .allow(HttpMethod.GET, HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE)
+                .build();
+    }
+
 
     @GetMapping("/get-client-cin/{clientCin}")
     public Client getClientByCin(@PathVariable String clientCin)
