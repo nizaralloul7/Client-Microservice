@@ -20,14 +20,6 @@ public class ClientController
     private final ClientRepository clientRepository;
     private final ClientService clientService;
 
-
-    @RequestMapping(method = RequestMethod.OPTIONS)
-    public ResponseEntity handle() {
-        return ResponseEntity
-                .ok()
-                .allow(HttpMethod.GET, HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE)
-                .build();
-    }
     @Autowired
     public ClientController(ClientRepository clientRepository, ClientService clientService)
     {
